@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "cofabric.memory.roadmap.v1",
+  "featuresNotYetImplemented": [
+    {
+      "name": "Journal entries management",
+      "description": "Users can create, edit, and delete journal entries with content.",
+      "needs": [
+        "pages",
+        "API routes",
+        "DB tables"
+      ]
+    },
+    {
+      "name": "Daily mood logging",
+      "description": "Users can log their mood daily with tracking capabilities.",
+      "needs": [
+        "pages",
+        "API routes",
+        "DB tables"
+      ]
+    },
+    {
+      "name": "Timeline view",
+      "description": "Users can view a timeline of their entries and mood logs combined.",
+      "needs": [
+        "pages",
+        "API routes"
+      ]
+    },
+    {
+      "name": "AI insights generation",
+      "description": "AI generates reflections and insights from user data (paid feature).",
+      "needs": [
+        "API routes",
+        "OpenAI integration"
+      ]
+    },
+    {
+      "name": "Search functionality",
+      "description": "Users can search through their entries and tags.",
+      "needs": [
+        "pages",
+        "API routes"
+      ]
+    },
+    {
+      "name": "Dashboard overview",
+      "description": "Users see an overview of their journaling and mood data.",
+      "needs": [
+        "pages",
+        "API routes"
+      ]
+    },
+    {
+      "name": "Analytics insights",
+      "description": "Users can view analytics and insights about their mood and journaling patterns.",
+      "needs": [
+        "pages",
+        "API routes"
+      ]
+    },
+    {
+      "name": "User settings management",
+      "description": "Users can manage their account settings and preferences.",
+      "needs": [
+        "pages",
+        "API routes"
+      ]
+    },
+    {
+      "name": "User authentication system",
+      "description": "Users can sign up, log in, and manage their accounts.",
+      "needs": [
+        "auth system",
+        "DB tables"
+      ]
+    },
+    {
+      "name": "Usage limits enforcement",
+      "description": "Free users are limited to 5 entries per day and 3 mood logs per day.",
+      "needs": [
+        "API routes",
+        "middleware"
+      ]
+    },
+    {
+      "name": "Stripe payment integration",
+      "description": "Users can pay for AI features through Stripe.",
+      "needs": [
+        "API routes",
+        "Stripe integration"
+      ]
+    }
+  ],
+  "databaseTablesToCreate": [
+    {
+      "name": "User",
+      "columnsSpecifiedInSpec": [
+        {
+          "name": "id",
+          "type": null,
+          "notes": null
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "notes": null
+        }
+      ],
+      "schemaDetailsInSpec": false
+    },
+    {
+      "name": "Entry",
+      "columnsSpecifiedInSpec": [
+        {
+          "name": "id",
+          "type": null,
+          "notes": null
+        },
+        {
+          "name": "user_id",
+          "type": null,
+          "notes": "Foreign key to User table"
+        },
+        {
+          "name": "content",
+          "type": "text",
+          "notes": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "notes": null
+        }
+      ],
+      "schemaDetailsInSpec": true
+    },
+    {
+      "name": "MoodLog",
+      "columnsSpecifiedInSpec": [
+        {
+          "name": "id",
+          "type": null,
+          "notes": null
+        },
+        {
+          "name": "user_id",
+          "type": null,
+          "notes": "Foreign key to User table"
+        },
+        {
+          "name": "mood",
+          "type": null,
+          "notes": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "notes": null
+        }
+      ],
+      "schemaDetailsInSpec": true
+    }
+  ],
+  "apiEndpointsToBuild": [
+    {
+      "method": "POST",
+      "path": "/api/entries",
+      "description": "Create a new journal entry with content",
+      "authRequired": null
+    },
+    {
+      "method": "PUT",
+      "path": "/api/entries/[id]",
+      "description": "Update an existing journal entry",
+      "authRequired": null
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/entries/[id]",
+      "description": "Delete a journal entry",
+      "authRequired": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/entries",
+      "description": "Retrieve user's journal entries",
+      "authRequired": null
+    },
+    {
+      "method": "POST",
+      "path": "/api/mood",
+      "description": "Log a daily mood entry",
+      "authRequired": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/mood",
+      "description": "Retrieve user's mood logs",
+      "authRequired": null
+    },
+    {
+      "method": "POST",
+      "path": "/api/ai/insights",
+      "description": "Generate AI insights from user data",
+      "authRequired": null
+    },
+    {
+      "method": "GET",
+      "path": "/api/search",
+      "description": "Search through entries and tags",
+      "authRequired": null
+    }
+  ],
+  "openQuestions": [
+    "What specific mood values or scale should be used for mood logging?",
+    "How should tags be implemented for entries and search?",
+    "What specific AI insights should be generated and how should they be formatted?",
+    "What analytics should be shown on the analytics page?",
+    "What user settings should be available on the settings page?",
+    "How should the daily limits be enforced (per calendar day, rolling 24 hours)?",
+    "What should be the pricing model and subscription tiers for AI features?"
+  ]
+}

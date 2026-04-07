@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "cofabric.memory.scaffold.v1",
+  "fileTree": [
+    {
+      "path": "package.json",
+      "purpose": "Next.js app with Supabase, OpenAI, Stripe dependencies",
+      "isEmpty": false
+    },
+    {
+      "path": "tsconfig.json",
+      "purpose": "TypeScript config with path mapping (@/*)",
+      "isEmpty": false
+    },
+    {
+      "path": "next.config.js",
+      "purpose": "Minimal Next.js config for app directory",
+      "isEmpty": false
+    },
+    {
+      "path": "postcss.config.js",
+      "purpose": "PostCSS config for Tailwind",
+      "isEmpty": false
+    },
+    {
+      "path": "tailwind.config.js",
+      "purpose": "Tailwind CSS setup with content paths",
+      "isEmpty": false
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "purpose": "Root layout with Mindful Journal metadata",
+      "isEmpty": false
+    },
+    {
+      "path": "src/app/globals.css",
+      "purpose": "Global styles with Tailwind base",
+      "isEmpty": false
+    },
+    {
+      "path": "src/app/page.tsx",
+      "purpose": "Landing page showcasing journaling and mood tracking features",
+      "isEmpty": false
+    },
+    {
+      "path": ".env.example",
+      "purpose": "Environment variables for Supabase, OpenAI, Stripe, and auth",
+      "isEmpty": false
+    },
+    {
+      "path": "pr-docs/.gitkeep",
+      "purpose": "Placeholder for PR documentation",
+      "isEmpty": true
+    },
+    {
+      "path": "memory/.gitkeep",
+      "purpose": "Placeholder for memory files",
+      "isEmpty": true
+    },
+    {
+      "path": "memory/project/.gitkeep",
+      "purpose": "Placeholder for project memory files",
+      "isEmpty": true
+    },
+    {
+      "path": "memory/task/.gitkeep",
+      "purpose": "Placeholder for task memory files",
+      "isEmpty": true
+    },
+    {
+      "path": "memory/agent/.gitkeep",
+      "purpose": "Placeholder for agent memory files",
+      "isEmpty": true
+    },
+    {
+      "path": "memory/context/.gitkeep",
+      "purpose": "Placeholder for context memory files",
+      "isEmpty": true
+    }
+  ],
+  "libraryExports": [],
+  "existingRoutes": [
+    {
+      "type": "page",
+      "path": "/",
+      "file": "src/app/page.tsx",
+      "httpMethods": null,
+      "isEmpty": false
+    }
+  ],
+  "databaseState": {
+    "migrationsExist": false,
+    "tables": []
+  },
+  "intentionallyEmpty": [
+    {
+      "file": "pr-docs/.gitkeep",
+      "intendedPurpose": "placeholder for PR documentation"
+    },
+    {
+      "file": "memory/.gitkeep",
+      "intendedPurpose": "placeholder for memory files"
+    },
+    {
+      "file": "memory/project/.gitkeep",
+      "intendedPurpose": "placeholder for project memory files"
+    },
+    {
+      "file": "memory/task/.gitkeep",
+      "intendedPurpose": "placeholder for task memory files"
+    },
+    {
+      "file": "memory/agent/.gitkeep",
+      "intendedPurpose": "placeholder for agent memory files"
+    },
+    {
+      "file": "memory/context/.gitkeep",
+      "intendedPurpose": "placeholder for context memory files"
+    }
+  ]
+}

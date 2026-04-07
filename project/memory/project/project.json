@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "cofabric.memory.project.v1",
+  "name": "mindful-journal",
+  "oneLineDescription": "A journaling + mood tracking web app with AI-generated reflections",
+  "whatItIs": "A journaling + mood tracking web app with AI-generated reflections.",
+  "stack": [
+    {
+      "name": "@supabase/supabase-js",
+      "version": "^2.38.0",
+      "purpose": "database and auth"
+    },
+    {
+      "name": "next",
+      "version": "^14.0.0",
+      "purpose": "web framework"
+    },
+    {
+      "name": "openai",
+      "version": "^4.20.0",
+      "purpose": "AI insights generation"
+    },
+    {
+      "name": "react",
+      "version": "^18.2.0",
+      "purpose": "UI library"
+    },
+    {
+      "name": "stripe",
+      "version": "^14.5.0",
+      "purpose": "payment processing"
+    }
+  ],
+  "externalIntegrations": [
+    {
+      "service": "Supabase",
+      "envVars": [
+        "NEXT_PUBLIC_SUPABASE_URL",
+        "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+        "SUPABASE_SERVICE_ROLE_KEY"
+      ],
+      "clientLocation": null
+    },
+    {
+      "service": "OpenAI",
+      "envVars": [
+        "OPENAI_API_KEY"
+      ],
+      "clientLocation": null
+    },
+    {
+      "service": "Stripe",
+      "envVars": [
+        "STRIPE_PUBLISHABLE_KEY",
+        "STRIPE_SECRET_KEY",
+        "STRIPE_WEBHOOK_SECRET"
+      ],
+      "clientLocation": null
+    },
+    {
+      "service": "NextAuth",
+      "envVars": [
+        "NEXTAUTH_SECRET",
+        "NEXTAUTH_URL"
+      ],
+      "clientLocation": null
+    }
+  ],
+  "coreUserFlows": [
+    "Create, edit, and delete journal entries",
+    "Log daily mood with tracking",
+    "View timeline of entries and moods",
+    "Generate AI insights for paid users",
+    "Search entries and tags"
+  ],
+  "outOfScope": []
+}
